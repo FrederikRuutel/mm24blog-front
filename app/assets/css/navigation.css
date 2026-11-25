@@ -1,0 +1,15 @@
+.blog-header {
+  border-bottom: 1px solid var(--ui-border);
+}
+
+.blog-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  padding-block: .75rem;
+}
+
+.blog-nav strong {
+  margin-inline-end: .5rem;
+}

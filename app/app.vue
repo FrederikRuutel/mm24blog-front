@@ -1,50 +1,28 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui';
+import { ElButton } from 'element-plus';
 
+const NuxtLink = resolveComponent('NuxtLink');
 const route = useRoute();
-
-const items = computed<NavigationMenuItem[]>(() => [
-  // {
-  //   label: 'Docs',
-  //   to: '/docs/getting-started',
-  //   active: route.path.startsWith('/docs/getting-started'),
-  // },
-  // {
-  //   label: 'Components',
-  //   to: '/docs/components',
-  //   active: route.path.startsWith('/docs/components')
-  // },
-  // {
-  //   label: 'Figma',
-  //   to: 'https://go.nuxt.com/figma-ui',
-  //   target: '_blank'
-  // },
-  // {
-  //   label: 'Releases',
-  //   to: 'https://github.com/nuxt/ui/releases',
-  //   target: '_blank'
-  // },
-]);
+const repo = 'https://github.com/Kasparsu/mm24blog-front';
+const links = [
+  { label: 'Avaleht', to: '/' },
+  { label: 'Blogist', to: '/about' },
+];
 </script>
+
 <template>
-   <ClientOnly>
   <UApp>
-    <UHeader title="Blog">
-      <UNavigationMenu :items="items" />
-
-      <template #right>
-        <UColorModeButton />
-
-        <UTooltip text="Open on GitHub" :kbds="['meta', 'G']">
-          <UButton color="neutral" variant="ghost" to="https://github.com/nuxt/ui" target="_blank"
-            icon="i-simple-icons-github" aria-label="GitHub" />
-        </UTooltip>
-      </template>
-    </UHeader>
+    <header class="blog-header">
+      <UContainer as="nav" aria-label="Põhimenüü" class="blog-nav">
+        <strong>Blog</strong>
+        <ElButton v-for="link in links" :key="link.to" :tag="NuxtLink" :to="link.to"
+          :type="route.path === link.to ? 'primary' : 'default'">{{ link.label }}</ElButton>
+        <ElButton tag="a" :href="repo">GitHub</ElButton>
+      </UContainer>
+    </header>
     <NuxtRouteAnnouncer />
-    <UContainer>
+    <UContainer as="main" class="py-6">
       <NuxtPage />
     </UContainer>
   </UApp>
-  </ClientOnly>
 </template>

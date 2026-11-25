@@ -1,75 +1,13 @@
-# Nuxt Minimal Starter
+# mm24blog-front: Element Plus
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install dependencies:
+Selles harus on blogi menüü tehtud Element Plus komponentidega. `app/plugins/element-plus.ts` registreerib plugina ja `nuxt.config.ts` laadib stiilid. Menüü kasutab `ElButton`-komponente.
+[Paigaldusjuhend](https://element-plus.org/en-US/guide/quickstart.html). Blogi sisu kasutab endiselt algprojekti Nuxt UI komponente.
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+npm ci
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Ava `http://localhost:3000`. Menüü viib avalehele, lehele „Blogist“ ja tunnikoodi GitHubi reposse. Postituste jaoks peab töötama Laraveli API aadressil `http://localhost:8000/api/posts`; menüü toimib ka ilma API-ta.
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Tootmisversiooni kontroll: `npm run build` ja `npm run preview`.

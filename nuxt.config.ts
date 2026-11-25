@@ -4,5 +4,5 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   telemetry: false,
   modules: ['@nuxt/ui'],
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', 'element-plus/dist/index.css', '~/assets/css/navigation.css'],
 });
