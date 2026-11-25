@@ -3,6 +3,8 @@
 Selles harus on blogi menüü tehtud Naive UI komponentidega. `nuxtjs-naive-ui` moodul lisab serveripoolsete stiilide plugina. Menüü kasutab `NButton`-komponente.
 [Paigaldusjuhend](https://www.naiveui.com/en-US/os-theme/docs/nuxtjs). Blogi sisu kasutab endiselt algprojekti Nuxt UI komponente.
 
+Kasuta Node.js 24.15.0 või uuemat 24.x versiooni. Testitud Node.js 26.7.0-ga.
+
 ```bash
 npm ci
 npm run dev
