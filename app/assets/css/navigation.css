@@ -48,7 +48,7 @@
     align-items: flex-end;
   }
 
-  .blog-menu .p-menubar-root-list {
+  .blog-nav .blog-menu.p-menubar-mobile > .p-menubar-root-list {
     position: static;
     width: max-content;
     min-width: 9rem;
