@@ -1,75 +1,13 @@
-# Nuxt Minimal Starter
+# Komponendiraamistikud praktikas
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Kolm menüüd samale Nuxti blogile. Iga lahendus on oma harus:
 
-## Setup
+| Haru | Menüü | Muudatused |
+| --- | --- | --- |
+| [primevue](https://github.com/FrederikRuutel/mm24blog-front/tree/primevue) | `Menubar`, telefonis avatav menüü | [Võrdle algkoodiga](https://github.com/FrederikRuutel/mm24blog-front/compare/8ec7561...primevue) |
+| [element-plus](https://github.com/FrederikRuutel/mm24blog-front/tree/element-plus) | `ElMenu` ja `ElMenuItem`, aktiivne leht eristub | [Võrdle algkoodiga](https://github.com/FrederikRuutel/mm24blog-front/compare/8ec7561...element-plus) |
+| [naive-ui](https://github.com/FrederikRuutel/mm24blog-front/tree/naive-ui) | `NMenu`, lingid menüü valikutes | [Võrdle algkoodiga](https://github.com/FrederikRuutel/mm24blog-front/compare/8ec7561...naive-ui) |
 
-Make sure to install dependencies:
+Menüüdes saab liikuda lehtede „Postitused” ja „Blogist” vahel. Käivitusjuhis on igas harus.
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Aluseks on [tunni mm24blog-front](https://github.com/Kasparsu/mm24blog-front/tree/8ec7561) projekti `main`. Võrreldes algkoodiga muutus `main` harus ainult see README. Menüüd on ülal lingitud harudes.
