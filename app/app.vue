@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { ElButton } from 'element-plus';
+import { ElMenu, ElMenuItem } from 'element-plus';
 
-const NuxtLink = resolveComponent('NuxtLink');
 const route = useRoute();
-const repo = 'https://github.com/Kasparsu/mm24blog-front';
 const links = [
-  { label: 'Avaleht', to: '/' },
+  { label: 'Postitused', to: '/' },
   { label: 'Blogist', to: '/about' },
 ];
 </script>
@@ -13,11 +11,13 @@ const links = [
 <template>
   <UApp>
     <header class="blog-header">
-      <UContainer as="nav" aria-label="Põhimenüü" class="blog-nav">
-        <strong>Blog</strong>
-        <ElButton v-for="link in links" :key="link.to" :tag="NuxtLink" :to="link.to"
-          :type="route.path === link.to ? 'primary' : 'default'">{{ link.label }}</ElButton>
-        <ElButton tag="a" :href="repo">GitHub</ElButton>
+      <UContainer as="nav" class="blog-nav" aria-label="Põhimenüü">
+        <strong>MM24 blogi</strong>
+        <ElMenu :default-active="route.path" mode="horizontal" :ellipsis="false" class="blog-menu">
+          <ElMenuItem v-for="link in links" :key="link.to" :index="link.to">
+            <NuxtLink :to="link.to" @keydown.enter.stop>{{ link.label }}</NuxtLink>
+          </ElMenuItem>
+        </ElMenu>
       </UContainer>
     </header>
     <NuxtRouteAnnouncer />
