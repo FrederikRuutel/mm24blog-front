@@ -13,9 +13,10 @@ const links = [
     <header class="blog-header">
       <UContainer as="nav" class="blog-nav" aria-label="Põhimenüü">
         <strong>MM24 blogi</strong>
-        <ElMenu :default-active="route.path" mode="horizontal" :ellipsis="false" class="blog-menu">
-          <ElMenuItem v-for="link in links" :key="link.to" :index="link.to">
-            <NuxtLink :to="link.to" @keydown.enter.stop>{{ link.label }}</NuxtLink>
+        <ElMenu router :default-active="route.path" mode="horizontal" :ellipsis="false" class="blog-menu">
+          <ElMenuItem v-for="link in links" :key="link.to" :index="link.to" :route="link.to"
+            :aria-current="route.path === link.to ? 'page' : undefined">
+            <NuxtLink :to="link.to" tabindex="-1" @click.stop>{{ link.label }}</NuxtLink>
           </ElMenuItem>
         </ElMenu>
       </UContainer>
