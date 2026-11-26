@@ -10,4 +10,4 @@ Kolm menüüd samale Nuxti blogile. Iga lahendus on oma harus:
 
 Menüüdes saab liikuda lehtede „Postitused” ja „Blogist” vahel. Käivitusjuhis on igas harus.
 
-Aluseks on [tunni mm24blog-front](https://github.com/Kasparsu/mm24blog-front/tree/8ec7561) projekti `main`. Võrreldes algkoodiga muutus `main` harus ainult see README. Menüüd on ülal lingitud harudes.
+Aluseks on [tunni mm24blog-front](https://github.com/Kasparsu/mm24blog-front/tree/8ec7561) projekti `main`. Võrreldes algkoodiga muutus harus `main` ainult see README. Menüüd on ülal lingitud harudes.
