@@ -1,23 +1,25 @@
 <script setup lang="ts">
-import { NButton } from 'naive-ui';
+import { NMenu } from 'naive-ui';
 
-const repo = 'https://github.com/Kasparsu/mm24blog-front';
+const NuxtLink = resolveComponent('NuxtLink');
+const route = useRoute();
 const links = [
-  { label: 'Avaleht', to: '/' },
+  { label: 'Postitused', to: '/' },
   { label: 'Blogist', to: '/about' },
 ];
+
+const options = links.map(link => ({
+  key: link.to,
+  label: () => h(NuxtLink, { to: link.to }, () => link.label),
+}));
 </script>
 
 <template>
   <UApp>
     <header class="blog-header">
-      <UContainer as="nav" aria-label="Põhimenüü" class="blog-nav">
-        <strong>Blog</strong>
-        <NuxtLink v-for="link in links" :key="link.to" v-slot="{ href, navigate, isExactActive }" :to="link.to" custom>
-          <NButton tag="a" :href="href" :type="isExactActive ? 'primary' : 'default'"
-            :aria-current="isExactActive ? 'page' : undefined" @click="navigate">{{ link.label }}</NButton>
-        </NuxtLink>
-        <NButton tag="a" :href="repo">GitHub</NButton>
+      <UContainer as="nav" class="blog-nav" aria-label="Põhimenüü">
+        <strong>MM24 blogi</strong>
+        <NMenu :value="route.path" :options="options" mode="horizontal" class="blog-menu" />
       </UContainer>
     </header>
     <NuxtRouteAnnouncer />
