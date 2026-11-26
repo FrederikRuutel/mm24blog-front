@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css', '~/assets/css/navigation.css'],
   primevue: {
     options: { theme: { preset: Aura } },
-    components: { include: ['Button'] },
+    components: { include: ['Menubar'] },
     composables: { exclude: ['useToast'] },
   },
 });

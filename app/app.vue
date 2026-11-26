@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import Button from 'primevue/button';
+import Menubar from 'primevue/menubar';
 
-const NuxtLink = resolveComponent('NuxtLink');
-const route = useRoute();
-const repo = 'https://github.com/Kasparsu/mm24blog-front';
 const links = [
-  { label: 'Avaleht', to: '/' },
+  { label: 'Postitused', to: '/' },
   { label: 'Blogist', to: '/about' },
 ];
 </script>
@@ -13,11 +10,13 @@ const links = [
 <template>
   <UApp>
     <header class="blog-header">
-      <UContainer as="nav" aria-label="Põhimenüü" class="blog-nav">
-        <strong>Blog</strong>
-        <Button v-for="link in links" :key="link.to" :as="NuxtLink" :to="link.to"
-          :label="link.label" :variant="route.path === link.to ? undefined : 'text'" />
-        <Button as="a" :href="repo" label="GitHub" variant="text" />
+      <UContainer as="nav" class="blog-nav" aria-label="Põhimenüü">
+        <strong>MM24 blogi</strong>
+        <Menubar :model="links" breakpoint="480px" class="blog-menu">
+          <template #item="{ item, props }">
+            <NuxtLink :to="item.to" v-bind="props.action">{{ item.label }}</NuxtLink>
+          </template>
+        </Menubar>
       </UContainer>
     </header>
     <NuxtRouteAnnouncer />
