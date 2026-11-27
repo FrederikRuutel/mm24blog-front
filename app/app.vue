@@ -3,7 +3,10 @@ import Menubar from 'primevue/menubar';
 
 const links = [
   { label: 'Postitused', to: '/' },
-  { label: 'Blogist', to: '/about' },
+  { label: 'Cats', to: '/cats' },
+  { label: 'Kittens', to: '/kittens' },
+  { label: 'Nuustik', to: '/kittens/nuustik' },
+  { label: 'Miisu', to: '/kittens/miisu' },
 ];
 </script>
 
