@@ -45,3 +45,14 @@
   height: 100%;
   padding-inline: .75rem;
 }
+
+@media (max-width: 640px) {
+  .blog-menu.el-menu--horizontal {
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+  }
+  .blog-menu .el-menu-item {
+    height: 3rem;
+  }
+}

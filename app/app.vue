@@ -4,7 +4,10 @@ import { ElMenu, ElMenuItem } from 'element-plus';
 const route = useRoute();
 const links = [
   { label: 'Postitused', to: '/' },
-  { label: 'Blogist', to: '/about' },
+  { label: 'Cats', to: '/cats' },
+  { label: 'Kittens', to: '/kittens' },
+  { label: 'Nuustik', to: '/kittens/nuustik' },
+  { label: 'Miisu', to: '/kittens/miisu' },
 ];
 </script>
 
