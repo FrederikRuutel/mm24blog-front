@@ -7,9 +7,13 @@ Kasuta Node.js 24.15.0 või uuemat 24.x versiooni. Testitud Node.js 26.7.0-ga.
 
 ```bash
 npm ci
-npm run dev
+bun run dev
 ```
 
-Ava `http://localhost:3000`. Menüü viib lehtedele „Postitused“ ja „Blogist“. Postituste jaoks peab töötama Laraveli API aadressil `http://localhost:8000/api/posts`; menüü toimib ka ilma API-ta.
+Ava `http://localhost:3000`. Menüüs on Postitused (`/`), Cats (`/cats`), Kittens (`/kittens`), Nuustik (`/kittens/nuustik`) ja Miisu (`/kittens/miisu`). Kassipoegade dünaamiline leht `/kittens/[name]` toetab ka muid nimesid. Postituste jaoks peab töötama Laraveli API aadressil `http://localhost:8000/api/posts`; menüü toimib ka ilma API-ta.
 
 Tootmisversiooni kontroll: `npm run build` ja `npm run preview`.
+
+## Tähelepanekud
+
+Naive UI vajab Nuxtis serveripoolsete stiilide jaoks `nuxtjs-naive-ui` moodulit. NMenu valikute sildid luuakse NuxtLinkidena ja aktiivne valik tuleb marsruudi aadressist. See sobib kompaktseks menüüks; lihtsa lingimassiivi asemel tuleb siiski koostada komponentide renderdusfunktsioonid.
